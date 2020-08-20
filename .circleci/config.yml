@@ -6,7 +6,7 @@ jobs:
         steps:
             - checkout
             - setup_remote_docker
-            
+
             - run:
                 name: 'Verify code is checked out'    
                 command: ls -al            
@@ -19,7 +19,7 @@ jobs:
             - run:
                 name: 'Build docker tag for Azure'                
                 command: |
-                    docker build -t vasanthapuram.azurecr.io/retail:1.0
+                    docker build -t vasanthapuram.azurecr.io/retail:1.0 . 
             - run :
                 name: 'Provide azure login/pass information to circleci'
                 command: | 
